@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>A Neural Network Example</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="author", content="Victor H. Manotas G."/>
+        <link rel="stylesheet" type="text/css " href="css/style.css"/>
+    </head>
+    <body>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script src="js/my_matrix.js"></script>
+        <script src="js/my_random.js"></script>
+        <script src="js/my_ann.js"></script>
+        <div class="container">
+            <h1>An Artificial Neural Network</h1>
+            <p>In this example, It is builded a neural network that performs a simple task
+            like predicting the dosage of a experimental droge that
+            make more the effective treatment on patients.</p>
+            <h2>Neural Network Components</h2>
+            <div class="component">
+                <h3 class = "input-labels">Data Inputs</h3>
+                <p>Put the inputs as a list of numbers example: [1,2,3]</p>
+                <input id="l_inputs" value="[0.0,0.5,1.0]" />
+            </div>
+            <div class="component">
+                <h3 class = "input-labels">Expected Results</h3>
+                <p>Put the inputs as a list of numbers example: [1,0,1]</p>
+                <input id="e_results" value="[0.0,1.0,0.0]" />
+            </div>
+            <div class="component">
+                <h3 class = "input-labels">Activation Function</h3>
+                <select id="act_func">
+                  <option value="0">ReLu</option>
+                  <option value="1">Sigmoid</option>
+                </select>
+                <h3 class = "input-labels">Steps by Batch</h3> 
+                <input type="number" id="steps" min="1" max="100">
+                <h3 class = "input-labels">Learnig Rate</h3> 
+                <input type="number" id="eta" min="1" max="2000"> 
+            </div>
+            <div class="component"></div>
+                <h3>Total Steps</h3>
+                <div id="total-steps">0</div>
+                <h3>Cost</h3>
+                <div id="cost">-1</div> 
+            </div>
+            <div class="component">
+                <button onclick="loadInputs()">Initialize</button>
+                <button onclick="runSimul()">Train</button>
+            </div>
+            <div class="component">
+                <h3>Results Graph</h3>
+                <div id="chart"></div>
+            </div>
+        </div>
+    </body>
+    <script src="js/my_setup.js"></script>
+    </html>
